@@ -81,7 +81,7 @@ const Home = () => {
         <div>
            
             <Container fluid>
-            <Row className="head_container p-4">
+            <Row className="head_container">
                 <Col lg={6} className="left_container">
                     <div className="left_items">
                         <h1 className="">Freedom 
@@ -259,27 +259,29 @@ const Home = () => {
               </div>
               <div className="user_cont1">
                   <div>
-                 <div className="user_cont mb-2">
+                 <div className="user_cont">
                      <img src={user1} alt="error"/>
                      <div className="user_info">
                          <h6>Natasha Singh</h6>
                          <p>Mumbai</p>
                     </div>
                 </div>
-                <div className="user_cont mb-3">
+                <div className="user_cont">
                      <img src={user2} alt="error"/>
                      <div className="user_info">
                          <h6>Alex Morgan</h6>
                          <p>Mumbai</p>
                     </div>
                 </div>
-                <div className="user_cont mb-3">
+                <div className="user_cont">
                      <img src={user3} alt="error"/>
                      <div className="user_info">
                          <h6>Arthur Hansen</h6>
                          <p>Mumbai</p>
                     </div>
+                    
                 </div>
+                
                 </div>
                 <div className="sub_user">
                     <h5>Excellent Work by Master Garage and Team</h5>
