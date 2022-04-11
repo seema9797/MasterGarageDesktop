@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {CardBody,Input,Label, ButtonGroup, Button,Row,Col, Container} from 'reactstrap';
 import { Link,withRouter,useHistory } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux'
 import './periodic.css';
+import axios from 'axios';
 import SideBar from './SideBar';
 import MidBar from './MidBar';
 import Car from '../../Images/ImagesAll/drawable-xhdpi/Car.png';
@@ -13,8 +14,36 @@ console.log(data);
 
 
 function PeriodicADDvechicle(){
+    const[serviseList,setServiceList]=useState([])
+    const[servisePack,setServicePack]=useState([])
 
+
+  
+
+    const listPackage=""
+       
+    useEffect(()=>{
+          const listService="http://mastergarage.in/garageapi/getServiceList.php";
+        axios.get(listService)
+        .then(res=>{
+            console.log(res.data.result)
+            setServiceList(res.data.result)
+        })
+        .catch(err=>{
+            console.log(err)
     
+        })
+    },[])
+    
+    const filterServicePack=(serviceId)=>{
+       const serpack ="http://mastergarage.in/garageapi/getServicePackage2.php" 
+
+       const updatedSerivce=serpack.filter((curEle)=>{
+           return curEle.serviceId === serviceId;
+       })
+       console.log(updatedSerivce)
+       setServicePack(updatedSerivce)
+    }
     const SubLast = () => {
         const[registerNo,setRegisterNo]=useState("")
         const[information,setInformation]=useState('')
@@ -23,6 +52,7 @@ function PeriodicADDvechicle(){
         const check=useSelector((state)=>state.check?.registerVehicalNo)
         const usedispatch=useDispatch()
         const history=useHistory()
+        
     
     const handlefilter=()=>{
         let temp=true
@@ -114,8 +144,8 @@ function PeriodicADDvechicle(){
                 </div>
             </Row>
             <Row>
-                <Col lg={2} sm={2} className="periodic_hide"><SideBar></SideBar></Col>
-                <Col lg={6} sm={8} className="periodic_hide"><MidBar></MidBar></Col>
+                <Col lg={2} sm={2} className="periodic_hide" serviseList={serviseList}><SideBar></SideBar></Col>
+                <Col lg={6} sm={8} className="periodic_hide"><MidBar filterServicePack={filterServicePack}></MidBar></Col>
                 <Col lg={4} sm={3}><SubLast></SubLast></Col>
                 
             </Row>

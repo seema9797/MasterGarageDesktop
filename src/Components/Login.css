@@ -2,6 +2,9 @@
 * {
     font-family: "Poppins";
 }
+.invalid{
+    border:1px solid red;
+}
 .hello {
     display: flex;
     justify-content: space-between;

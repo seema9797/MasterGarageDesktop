@@ -73,7 +73,7 @@ const CartBox = () => {
                  :
                  <>
                  {dataitem.map((value)=>(
-                    <div className='p-4 cartcol'>
+                    <div className='px-3 mt-3  cartcol'>
                     <div className='titlemnt'>
                         <h6 className=''>{value.title}</h6>
                         <p className=''>{value.yearmonth}</p>

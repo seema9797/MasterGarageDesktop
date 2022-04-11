@@ -10,9 +10,9 @@ import './vehical.css'
 const AddVehical = () => {
   return (
     <div className="add_Top">
-    <div className="nav_mob"> 
+    <div className="nav_mob "> 
     <div className="arrow_marge"><i class="fa-solid fa-arrow-left"></i> <p>Add Vehical</p></div>
-          <div>
+          <div className='px-2'>
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-bell"></i>
           </div>
@@ -21,7 +21,7 @@ const AddVehical = () => {
       <div className="progressbar">
             <div className="prog">   
             </div>
-            <div className="pagesize1"><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li></div>
+            <div className="pagesize1"><li></li><li>|</li><li>|</li><li>|</li><li>|</li><li></li></div>
             <div className="pagesize">
                  <li>E</li>
                  <li>Vehical</li>
@@ -42,7 +42,7 @@ const AddVehical = () => {
     <div class="addvechiclebox1">
     <form>
         <input className='vechicleInput' type="text" placeholder="Example - MH 01 AB 1234" name="add vechicle" />
-        <Link to ="/Service_Mob"><button className='vechiclebtn'>Add Vechicle</button></Link>
+        <Link to ="/Service_Mob"><button className='vechiclebtn'>Submit</button></Link>
     </form>
     </div>
     <div className="suv_addvehical1">

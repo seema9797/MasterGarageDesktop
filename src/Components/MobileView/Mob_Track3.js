@@ -137,7 +137,7 @@ return (
                     </div>
                 </div>
                 <div className="">
-                <button type="button" className="btn btn-primary btn-sm btn-block btn_instrction">
+                <button type="button" className="btn_instrction">
                 <p> <img src={wrech} alt="error"/>
                 Add Service Instructions
                 </p>
@@ -257,7 +257,7 @@ return (
         <small>Inclusive of all charges</small>
         </div>
         <div>
-        <Link to="/Mob_Track3"><button className='pay_Now'>PAY NOW</button></Link>
+        <Link to="/Vehical_history"><button className='pay_Now'>PAY NOW</button></Link>
         </div>
 
         </div>

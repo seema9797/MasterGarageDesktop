@@ -28,7 +28,7 @@ const Service_Add = () => {
     <div className="add_Top">
     <div className="nav_mob"> 
     <div className="arrow_marge"><i class="fa-solid fa-arrow-left"></i> <h6 className="arrow_non"> Basic Service</h6></div>
-          <div>
+          <div className="px-2">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-bell"></i>
           </div>
@@ -37,7 +37,7 @@ const Service_Add = () => {
       <div className="progressbar">
             <div className="prog">   
             </div>
-            <div className="pagesize1"><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li></div>
+            <div className="pagesize1"><li></li><li>|</li><li>|</li><li>|</li><li>|</li><li></li></div>
             <div className="pagesize">
                  <li>E</li>
                  <li>Vehical</li>
@@ -208,6 +208,7 @@ const Service_Add = () => {
              <button>Speak Now</button>
          </div>
     </div>
+    
     </div>
   )
 }

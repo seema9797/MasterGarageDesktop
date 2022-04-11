@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import Track from '../Trackingstatus/TrackingComp'
 import { Container,Row,Col,Card,Button,ButtonGroup, CardBody, CardTitle, CardText,CardSubtitle, CardFooter } from 'reactstrap'
 import { Link,withRouter } from 'react-router-dom';
@@ -6,6 +7,15 @@ import './vehical.css'
 import BasicService from '../../Images/BasicService.png';
 import recomend from '../../Images/drawable-xxxhdpi/recomend.png';
 import rightcheck from '../../Images/drawable-xxxhdpi/Path 22613.png';
+import loc from '../../Images/drawable-xxxhdpi/Path 31705.png';
+import save from '../../Images/drawable-xxxhdpi/Path 31710.png';
+import coupan from '../../Images/drawable-xxxhdpi/coupan.png';
+
+import setloc from '../../Images/drawable-xxxhdpi/Group 31590.png';
+import notsure from '../../Images/drawable-xxxhdpi/Group 29661.png';
+import next from '../../Images/drawable-xxxhdpi/Group 31585.png';
+import car from '../../Images/drawable-xxxhdpi/Path 31698.png';
+
 
 import vehical from '../../Images/balano.jpg';
 import StandardService from '../../Images/StandardService.png';
@@ -18,11 +28,26 @@ import StarterMotor from '../../Images/StarterMotor.png';
 import man from '../../Images/drawable-xxxhdpi/Group 32085.png';
 
 const Service_Mob = () => {
+    const[services,setServices]=useState([])
+
+    const url="http://65.2.127.249/garage/getoutletAll.php"
+
+    useEffect(()=>{
+    axios.get(url)
+    .then(res=>{
+      console.log(res.data)
+      setServices(res.data)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+    },[])
+
   return (
     <div className="add_Top">
     <div className="nav_mob"> 
-    <div className="arrow_marge"><i class="fa-solid fa-arrow-left"></i> <p className="arrow_non"> Periodic Service<i class="fa-solid fa-angles-down"></i></p></div>
-          <div>
+    <div className="arrow_marge"><i class="fa-solid fa-arrow-left"></i> <h6 className="arrow_non"> Periodic Service<i class="fa-solid fa-angles-down"></i></h6></div>
+          <div className="px-3">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-bell"></i>
           </div>
@@ -31,7 +56,7 @@ const Service_Mob = () => {
       <div className="progressbar">
             <div className="prog">   
             </div>
-            <div className="pagesize1"><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li></div>
+            <div className="pagesize1"><li></li><li>|</li><li>|</li><li>|</li><li>|</li><li></li></div>
             <div className="pagesize">
                  <li>E</li>
                  <li>Vehical</li>
@@ -107,7 +132,7 @@ const Service_Mob = () => {
             </div>
             </div>
             <div className="other_pac">
-                <h6 className="other_pac">Other Packages</h6>
+                <h6 className="basic">Other Packages</h6>
            
             <div className="service_card">
                 <h6>Engine Scanning</h6>
@@ -174,7 +199,7 @@ const Service_Mob = () => {
              <button>Speak Now</button>
          </div>
     </div>
-
+  
     </div>
   )
 }

@@ -7,7 +7,8 @@ import {useSelector,useDispatch} from 'react-redux';
 import {logingarage} from '../redux/action';
 import enLocale from "i18n-iso-countries/langs/en.json";
 import itLocale from "i18n-iso-countries/langs/it.json";
-import PhoneInput from "react-phone-input-2";
+import { useForm, Controller } from "react-hook-form";
+import PhoneInput,{isValidPhoneNumber} from "react-phone-input-2";
 //import 'react-phone-input-2/lib/style.css'
 import countries from "i18n-iso-countries";
 import helpsupport from '../Images/drawable-xxxhdpi/drawable-xxxhdpi/helpsupport.png';
@@ -19,7 +20,7 @@ const Signup = ({show}) => {
    const [selectedCountry, setSelectedCountry] = useState("");
    const [phone, setPhone] = useState();
    const setSelectCountry = (value) => setSelectedCountry(value);
- 
+    
    // Have to register the languages you want to use
    countries.registerLocale(enLocale);
    countries.registerLocale(itLocale);
@@ -51,7 +52,8 @@ const Signup = ({show}) => {
        console.log(body)
        dispatch(logingarage(body));
    }
-      
+     
+
     return (
         <Container>
         <Card className="card1 active">

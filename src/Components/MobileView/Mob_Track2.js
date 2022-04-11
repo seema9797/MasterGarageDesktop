@@ -132,11 +132,11 @@ return (
                     </div>
                     <div sm={4} md={4} className="book_subcont1">
                         <i class="far fa-edit"></i>
-                        <p>Edit</p>
+                        <p className="editextra">Edit</p>
                     </div>
                 </div>
                 <div className="">
-                <button type="button" className="btn btn-primary btn-sm btn-block btn_instrction">
+                <button type="button" className="btn_instrction">
                 <p> <img src={wrech} alt="error"/>
                 Add Service Instructions
                 </p>

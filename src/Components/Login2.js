@@ -1,13 +1,66 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Login.css';
 import { Link } from 'react-router-dom';
-import { Container,Row,Col,Card,Button,ButtonGroup,CardHeader, CardBody, CardTitle, CardText,CardSubtitle, CardFooter } from 'reactstrap';
+import { Container,Row,Col,Card,Button,ButtonGroup,CardHeader, CardBody, CardTitle, CardText,CardSubtitle, CardFooter,Alert } from 'reactstrap';
 import profile from '../Images/profile.png';
 import helpsupport from '../Images/drawable-xxxhdpi/drawable-xxxhdpi/helpsupport.png';
 import favourites from '../Images/drawable-xxxhdpi/drawable-xxxhdpi/favourites.png';
 import referearn from '../Images/drawable-xxxhdpi/drawable-xxxhdpi/referearn.png';
 import contact from '../Images/drawable-xxxhdpi/drawable-xxxhdpi/contactus.png';
-const Login2 = ({show}) => {
+import { useUserAuth } from './context/UserAuthContext';
+import { async } from '@firebase/util';
+//import {firebase,auth} from './firebase'
+const Login2 = () => {
+  const[mynumber,setnumber]=useState("");
+  const[email,setEmail]=useState("");
+  const[password,setPassword]=useState("");
+  const [final, setfinal] = useState('');
+  const [show, setshow] = useState(false);
+  const[error,setError]=useState("");
+  const[otp,setotp]=useState()
+  console.log(useUserAuth())
+  const{signUp}=useUserAuth();
+
+
+
+    // Sent OTP
+  //   const signin = () => {
+  
+  //     if (mynumber === "" || mynumber.length < 10) return;
+
+  //     let verify = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+  //     auth.signInWithPhoneNumber(mynumber, verify).then((result) => {
+  //         setfinal(result);
+  //         alert("code sent")
+  //         setshow(true);
+  //     })
+  //         .catch((err) => {
+  //             alert(err);
+  //             window.location.reload()
+  //         });
+  // }
+
+  // Validate OTP
+  const ValidateOtp = () => {
+      if (otp === null || final === null)
+          return;
+      final.confirm(otp).then((result) => {
+          // success
+      }).catch((err) => {
+          alert("Wrong code");
+      })
+  }
+  // const handleSubmit =async(e)=>{
+  //   e.preventDefault();
+  //   setError("")
+  //   try{
+  //     await signUp(email, password);
+
+  //   }catch(err){
+
+  //     setError(err.message)
+  //   }
+  // }
     return (
         <Container>
             <Card className="card1 active">
@@ -23,13 +76,22 @@ const Login2 = ({show}) => {
                </div>
                <CardBody className="login_head">
                    <h4>Log in</h4>
+                   {error && <Alert color="danger" variant="danger">{error}</Alert>}
                    <div className="input_log">
-                  <input placeholder="Enter Phone number or E-mail"/>
+                  <input placeholder="Enter Phone number or E-mail"
+                    type="text"
+                    onChange={(e)=>setEmail(e.target.value)}
+                  />
                   <div className="inputpass">
-                    <input id="txtPassword" type="password" className="textfield password" placeholder="Password" />
+                    <input id="txtPassword"
+                     type="password"
+                      className="textfield password"
+                       placeholder="Password"
+                       onChange={(e)=>setPassword(e.target.value)}
+                       />
                     <Link className="hyperlink">Forgot Password</Link>
                 </div>
-                  <Link to="/profile"><button className="contine_btn">CONTINUE</button></Link>
+                  <Link to="#"><button className="contine_btn">CONTINUE</button></Link>
                   </div>
                   <h6 className="create_acc">New to Master Garage?<Link to="/signup"> Create Account</Link></h6>
                </CardBody>

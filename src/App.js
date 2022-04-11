@@ -1,6 +1,6 @@
 import TopNavbar from './Components/TopNavbar/TopNavbar';
 import React from 'react';
-import { BrowserRouter, Route ,Switch} from 'react-router-dom'
+import { BrowserRouter,  Route ,Switch} from 'react-router-dom'
 import Home from './Components/Home'
 import HomeMaintain from './Components/Home_Maintain/HomeMaintain';
 import HomeMain1 from './Components/Home_Maintain/HomeMain1';
@@ -68,7 +68,7 @@ import Search from './Components/Locaton/Search';
 import Addvehical from './Components/Locaton/Addvihical';
 import Addinstruction from './Components/Locaton/Addinstruction';
 import Bookingid from './Components/QrPages/Bookingid';
-//import Sidebar from './Components/dashborad/Sidebar'
+//import Sidebar from './Components/dashborad/Sidebar';
 import bokking from './Components/GarageVerification/Bokking'
 
 //MOBLE RESPONSIVE
@@ -77,6 +77,15 @@ import Mob_Secedule from './Components/MobileView/Mob_Secedule';
 import Mob_Track2 from './Components/MobileView/Mob_Track2';
 import Mob_Track3 from './Components/MobileView/Mob_Track3';
 import Mob_Track4 from './Components/MobileView/Mob_Track4';
+import SelectPayment_mob from './Components/MobileView/SelectPayment_mob';
+import PlaceOrder_Mob from './Components/MobileView/PlaceOrder_Mob';
+import PaySuccess_Mob from './Components/MobileView/PaySuccess_Mob';
+import Congratulation_Mob from './Components/MobileView/Congratulation_Mob';
+import GarageNotAvailable_Mob from './Components/MobileView/GarageNotAvailable_Mob';
+import BookingCancle_Mob from './Components/MobileView/BookingCancle_Mob';
+import SelectMap_Mob from './Components/MobileView/SelectMap_Mob';
+import SaveAdd_Mob from './Components/MobileView/SaveAdd_Mob';
+import GetCurrentLoc_Mob from './Components/MobileView/GetCurrentLoc_Mob';
 
 
 //RESPONSIVE LOGIN
@@ -91,6 +100,58 @@ import Service_Mob from './Components/MobileView/Service_Mob'
 import vehicla_mob from './Components/MobileView/Mob_VehicalRecive';
 import Service_Add from './Components/MobileView/Service_Add'
 import Service_Added from './Components/MobileView/Service_added'
+import Estimate_Mob from './Components/MobileView/Estimate_Mob'
+import Map_Mob from './Components/MobileView/Map_Mob'
+import Garage_Mob from './Components/MobileView/Garage_Mob';
+import Timedate_sched from './Components/MobileView/Timedate_sched'
+import ConfirmBook_Mob from './Components/MobileView/ConfirmBook_Mob';
+
+
+
+//SIDEBAR MOBILE
+import Edit_Mob from './Components/Account/Sidebar/Edit_Mob'
+import MgWallet_Mob from './Components/Account/Sidebar/MgWallet_Mob'
+import MgWalletEmpty_Mob from './Components/Account/Sidebar/MgWalletEmpty_Mob'
+import MgCoinDeal_Mob from './Components/Account/Sidebar/MgCoinDeal_Mob'
+import MgCoinHis_Mob from './Components/Account/Sidebar/MgCoinHis_Mob'
+import MgCoinFaq_Mob from './Components/Account/Sidebar/MgCoinFaq_Mob'
+import MgCoinhTw_Mob from './Components/Account/Sidebar/MgCoinhTw_Mob'
+import MgCoinFill_Mob from './Components/Account/Sidebar/MgCoinFill_Mob'
+import SubmitGarage from './Components/Account/Sidebar/SubmitGarage'
+import GarageAddVeh_Mob from './Components/Account/Sidebar/GarageAddVeh_Mob'
+import EmptyEstimate_Mob from './Components/Account/Sidebar/EmptyEstimate_Mob'
+import SaveEstimate_Mob from './Components/Account/Sidebar/SaveEstimate_Mob'
+import RecentOrderEsti_Mob from './Components/Account/Sidebar/RecentOrderEsti_Mob'
+import OrderEmpty_Mob from './Components/Account/Sidebar/OrderEmpty_Mob'
+import OngoingOrder_Mob from './Components/Account/Sidebar/OngoingOrder_Mob'
+import OrderHis_Mob from './Components/Account/Sidebar/OrderHis_Mob'
+import HelpSupEmpty_Mob from './Components/Account/Sidebar/HelpSupEmpty_Mob'
+import HelpTicke_Mob from './Components/Account/Sidebar/HelpTicke_Mob'
+import HelpFaq_Mob from './Components/Account/Sidebar/HelpFaq_Mob'
+
+import MyTicket_Mob from './Components/Account/Sidebar/MyTicket_Mob'
+import Refer_Mob from './Components/Account/Sidebar/Refer_Mob'
+import ChatEmpty_Mob from './Components/Account/Sidebar/ChatEmpty_Mob'
+import Chat_Mob from './Components/Account/Sidebar/Chat_Mob'
+import Fastage_Mob from './Components/Account/Sidebar/Fastage_Mob'
+
+import ActiveFastage_Mob from './Components/Account/Sidebar/ActiveFastage_Mob'
+import RechargeCard_Mob from './Components/Account/Sidebar/RechargeCard_Mob'
+import RechargeCoupan_Mob from './Components/Account/Sidebar/RechargeCoupan_Mob'
+import RechargeSuccess_Mob from './Components/Account/Sidebar/RechargeSuccess_Mob'
+import PassbookEmpty_Mob from './Components/Account/Sidebar/PassbookEmpty_Mob'
+import PassbookVehNo_Mob from './Components/Account/Sidebar/PassbookVehNo_Mob'
+import PassbookVehical_Mob from './Components/Account/Sidebar/PassbookVehical_Mob'
+import ActiveCard_Mob from './Components/Account/Sidebar/ActiveCard_Mob'
+
+
+
+//QRcScanning
+import Register_Mob from './Components/Account/Sidebar/Register_Mob'
+import ActiveTab_Mob from './Components/Account/Sidebar/ActiveTab_Mob'
+import ContactOwnerVeh_Mob from './Components/Account/Sidebar/ContactOwnerVeh_Mob'
+import OtpVeri__Mob from './Components/Account/Sidebar/OtpVeri__Mob'
+import Qrcode_Mob from './Components/Account/Sidebar/Qrcode_Mob'
 
 
 //import JobCar from './Components/JobCard/JobCar';
@@ -117,9 +178,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-calendar/dist/Calendar.css';
 //import "react-step-progress/dist/index.css";
 //
-
+import {UserAuthContextProvider} from "./Components/context/UserAuthContext"
 
 import Routes from './Components/dashborad/Routes';
+import MobAccount from './Components/Account/Routing/MobAccount'
 function App() {
   return (
     <div className="App">
@@ -127,10 +189,12 @@ function App() {
      
          <BrowserRouter>
          <TopNavbar></TopNavbar>
+         <UserAuthContextProvider>
     <Switch>
-      <Route path='/' exact component={Home} />
+
+      {/* <Route path='/' exact component={Home} /> */}
       <Route path='/Dummypage' component={Dummypage}/>
-      {/* <Route path='/' exact component={Login_Mob}/> */}
+      <Route path='/' exact component={Login_Mob}/>
       <Route path='/HomeMaintain' component={HomeMaintain}/>
       <Route path='/HomeMain1' component={HomeMain1}/>
       <Route path= "/Confirmbook" component={Aboutus}  />
@@ -230,9 +294,70 @@ function App() {
             <Route path="/vehicla_mob" component={vehicla_mob}/>
             <Route path="/Service_Add" component={Service_Add}/>
             <Route path="/Service_Added" component={Service_Added}/>
+            <Route path="/Estimate_Mob" component={Estimate_Mob}/>
+            <Route path="/Map_Mob" component={Map_Mob}/>
+            <Route path="/Garage_Mob" component={Garage_Mob}/>
+            <Route path="/Timedate_sched" component={Timedate_sched}/>
+            <Route path="/SelectPayment_mob" component={SelectPayment_mob}/>
+            <Route path="/PaySuccess_Mob" component={PaySuccess_Mob}/>
+            <Route path="/PlaceOrder_Mob" component={PlaceOrder_Mob}/>
+            <Route path="/Congratulation_Mob" component={Congratulation_Mob}/>
+            <Route path="/GarageNotAvailable_Mob" component={GarageNotAvailable_Mob}/>
+            <Route path="/BookingCancle_Mob" component={BookingCancle_Mob}/>
+            <Route path="/SelectMap_Mob" component={SelectMap_Mob}/>
+            <Route path="/SaveAdd_Mob" component={SaveAdd_Mob}/>
+            <Route path="/GetCurrentLoc_Mob" component={GetCurrentLoc_Mob}/>
+            <Route path="/ConfirmBook_Mob" component={ConfirmBook_Mob}/>
+            <Route path="/mobaccount" component={MobAccount}/>
+
+
+            {/* SIDEBAR MOBILE */}
+            <Route path="/Edit_Mob" component={Edit_Mob}/>
+            <Route path="/MgWallet_Mob" component={MgWallet_Mob}/>
+            <Route path="/MgWalletEmpty_Mob" component={MgWalletEmpty_Mob}/>
+            <Route path="/MgCoinDeal_Mob" component={MgCoinDeal_Mob}/>
+            <Route path="/MgCoinHis_Mob" component={MgCoinHis_Mob}/>
+            <Route path="/MgCoinFaq_Mob" component={MgCoinFaq_Mob}/>
+            <Route path="/MgCoinhTw_Mob" component={MgCoinhTw_Mob}/>
+            <Route path="/MgCoinFill_Mob" component={MgCoinFill_Mob}/>
+            <Route path="/SubmitGarage" component={SubmitGarage}/>
+            <Route path="/GarageAddVeh_Mob" component={GarageAddVeh_Mob}/>
+            <Route path="/EmptyEstimate_Mob" component={EmptyEstimate_Mob}/>
+            <Route path="/SaveEstimate_Mob" component={SaveEstimate_Mob}/>
+            <Route path="/RecentOrderEsti_Mob" component={RecentOrderEsti_Mob}/>
+            <Route path="/OrderEmpty_Mob" component={OrderEmpty_Mob}/>
+            <Route path="/OngoingOrder_Mob" component={OngoingOrder_Mob}/>
+            <Route path="/OrderHis_Mob" component={OrderHis_Mob}/>
+            <Route path="/HelpSupEmpty_Mob" component={HelpSupEmpty_Mob}/>
+            <Route path="/MyTicket_Mob" component={MyTicket_Mob}/>
+            <Route path="/HelpTicke_Mob" component={HelpTicke_Mob}/>
+            <Route path="/HelpFaq_Mob" component={HelpFaq_Mob}/>
+
             
+
+            
+
+            <Route path="/Register_Mob" component={Register_Mob}/>
+            <Route path="/ActiveTab_Mob" component={ActiveTab_Mob}/>
+            <Route path="/ContactOwnerVeh_Mob" component={ContactOwnerVeh_Mob}/>
+            <Route path="/OtpVeri__Mob" component={OtpVeri__Mob}/>
+            <Route path="/Qrcode_Mob" component={Qrcode_Mob}/>
+
+            <Route path="/Refer_Mob" component={Refer_Mob}/>
+            <Route path="/ChatEmpty_Mob" component={ChatEmpty_Mob}/>
+            <Route path="/Chat_Mob" component={Chat_Mob}/>
+            <Route path="/Fastage_Mob" component={Fastage_Mob}/>
+            <Route path="/ActiveFastage_Mob" component={ActiveFastage_Mob}/>
+            <Route path="/RechargeCard_Mob" component={RechargeCard_Mob}/>
+            <Route path="/RechargeCoupan_Mob" component={RechargeCoupan_Mob}/>
+            <Route path="/RechargeSuccess_Mob" component={RechargeSuccess_Mob}/>
+            <Route path="/PassbookEmpty_Mob" component={PassbookEmpty_Mob}/>
+            <Route path="/PassbookVehNo_Mob" component={PassbookVehNo_Mob}/>
+            <Route path="/PassbookVehical_Mob" component={PassbookVehical_Mob}/>
+            <Route path="/ActiveCard_Mob" component={ActiveCard_Mob}/>
            
     </Switch>
+    </UserAuthContextProvider> 
   </BrowserRouter>
 
       </header>

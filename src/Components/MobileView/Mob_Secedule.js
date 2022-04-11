@@ -76,7 +76,7 @@
                     </div>
                         <div className='book_garage'>
                         <h6>Booking ID: MG1234567890 </h6>
-                        <div className="book_sub">
+                        <div className="book_sub px-2">
                             <div sm={6} md={6} className="book_subcont">
                                 <p>Booking Date & Time</p>
                                 <small>21/01/2021  at  11.00 AM</small>
@@ -86,7 +86,7 @@
                                 <small>21/01/2021  at  11.00 AM</small>
                             </div>
                             </div>
-                            <div className="book_sub">
+                            <div className="book_sub px-2 pt-3">
                             <div sm={8} md={8} className="book_subcont">
                                 <p>Pick Up & Drop Address</p>
                                 <small>A-1234, CGC Residency, Near Bisleri office, <br/> <br/>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div className="">
-                        <button type="button" className="btn btn-primary btn-sm btn-block btn_instrction">
+                        <button type="button" className="btn_instrction">
                         <p> <img src={wrech} alt="error"/>
                         Add Service Instructions
                         </p>
@@ -118,7 +118,9 @@
                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                         </div>
                         </div>
-                        <div className="rounded shadow-1 mb-2">
+                      
+                      
+              <div className="rounded shadow-1 mb-2">
                 <div className="toggleheader">
                 <p>Order Details</p>
                 <p id="toggler1" className="togglebtn"><i class="fas fa-chevron-down"></i></p>

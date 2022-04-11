@@ -10,7 +10,7 @@ const AddVehical_his = () => {
     <div className="add_Top">
         <div className="nav_mob"> 
         <div className="arrow_marge"><i class="fa-solid fa-arrow-left"></i> <p>Add Vehical</p></div>
-              <div>
+              <div className="px-2">
                   <i class="fa-solid fa-magnifying-glass"></i>
                   <i class="fa-solid fa-bell"></i>
               </div>
@@ -19,7 +19,7 @@ const AddVehical_his = () => {
           <div className="progressbar">
                 <div className="prog">   
                 </div>
-                <div className="pagesize1"><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li><li>|</li></div>
+                <div className="pagesize1"><li></li><li>|</li><li>|</li><li>|</li><li>|</li><li></li></div>
                 <div className="pagesize">
                      <li>E</li>
                      <li>Vehical</li>

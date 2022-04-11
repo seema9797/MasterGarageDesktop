@@ -14,6 +14,12 @@
 }
 .expand {
 }
+.sideservice_click:visited{
+    color:'#2650D8';
+    font-size:'15px';
+    font-weight:'bold';
+    margin-bottom:'8px';
+}
 .class_expand {
     display: flex;
     justify-content: space-between;
