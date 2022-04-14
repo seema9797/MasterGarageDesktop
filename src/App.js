@@ -191,10 +191,9 @@ function App() {
          <TopNavbar></TopNavbar>
          <UserAuthContextProvider>
     <Switch>
-
-      {/* <Route path='/' exact component={Home} /> */}
+      <Route path='/' exact component={Home} />
       <Route path='/Dummypage' component={Dummypage}/>
-      <Route path='/' exact component={Login_Mob}/>
+      {/* <Route path='/' exact component={Login_Mob}/> */}
       <Route path='/HomeMaintain' component={HomeMaintain}/>
       <Route path='/HomeMain1' component={HomeMain1}/>
       <Route path= "/Confirmbook" component={Aboutus}  />
